@@ -405,7 +405,10 @@ def getstructure(element, structure, bookkeeper, incorrection=None, debug=False,
 
             if html:
                 #has children
-                html = "<" + htmltag + " id=\"" + element.id + "\" class=\"F " + element.XMLTAG + "\">" + annotationbox + label + html
+                if element.cls == "1":
+                    html = "<" + htmltag + " id=\"" + element.id + "\" class=\"sent-protest F " + element.XMLTAG + "\">" + annotationbox + label + html
+                else:
+                    html = "<" + htmltag + " id=\"" + element.id + "\" class=\"F " + element.XMLTAG + "\">" + annotationbox + label + html
             else:
                 #no children
                 html = "<" + htmltag + " id=\"" + element.id + "\" class=\"F " + element.XMLTAG + " deepest\">" + annotationbox
